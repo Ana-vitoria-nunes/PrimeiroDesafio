@@ -6,14 +6,14 @@ public class Main {
         int pontos=0;
         int ganhou=0;
         int perdeu=0;
-        int invalido=0;
+        //int invalido=0;
         System.out.println("-----Jogo dos dados-----");
         System.out.println("Você terá 5 tentativas\n");
         System.out.println("-------Instruções-------");
         System.out.println("* Caso seu número seja igual o número gerado, ganha 10Pts.");
         System.out.println("* Caso seu número seja 1 numero acima ou abaixo do número gerado, ganha 5Pts.");
         System.out.println("* Caso não seja nenhuma das opções, você perde.");
-        System.out.println("*O programa so ira rodar se o número que você colocar estiver entra (0-10)");
+        System.out.println("*O programa so ira rodar se o número que você colocar estiver entra (0-10).");
 
         int i=0;
         while (i<5){
@@ -59,6 +59,6 @@ public class Main {
         }
         System.out.println("---------------------------------");
         System.out.println("Você está com " + pontos + " pontos.");
-        System.out.println("De 5 rodadas você ganhou "+ganhou+", perdeu "+perdeu);
+        System.out.println("De 5 rodadas você ganhou "+ganhou+" e perdeu "+perdeu+".");
     }
 }
