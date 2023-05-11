@@ -12,8 +12,8 @@ public class Main {
         System.out.println("-------Instruções-------");
         System.out.println("* Caso seu número seja igual o número gerado, ganha 10Pts.");
         System.out.println("* Caso seu número seja 1 numero acima ou abaixo do número gerado, ganha 5Pts.");
-        System.out.println("* Caso seu número seja maior que 10, sua rodada sera inválida.");
         System.out.println("* Caso não seja nenhuma das opções, você perde.");
+        System.out.println("*O programa so ira rodar se o número que você colocar estiver entra (0-10)");
 
         int i=0;
         while (i<5){
@@ -23,6 +23,11 @@ public class Main {
             System.out.println("Informe um número de 0 até 10: ");
              numero= entrada.nextInt();
 
+             while (numero>10 || numero<0){
+                 System.out.println("Entrada invalida, entre novamente com um valor.");
+                 System.out.println("Informe um número de 0 até 10: ");
+                 numero= entrada.nextInt();
+             }
             Random random=new Random();
             int numeroAleatorio=random.nextInt(10);
 
@@ -30,7 +35,6 @@ public class Main {
             int valorAbaixo=numero-1;
             System.out.println("Número Aleatorio: "+numeroAleatorio);
             System.out.println("valorAcima: "+valorAcima+", valorabaixo: "+valorAbaixo);
-
 
             if (numero==numeroAleatorio) {
                 pontos+=10;
@@ -42,10 +46,11 @@ public class Main {
                 ganhou++;
                 System.out.println("Você ganhou 5 pontos.");
             }
-            else if (numero>10) {
+            //Substitui essa função pelo while na linha 26.
+            /*else if (numero>10)
                 invalido++;
                 System.out.println("Rodada inválida.");
-            }
+            }*/
             else {
                 perdeu++;
                 System.out.println("Você perdeu o jogo.");
@@ -54,6 +59,6 @@ public class Main {
         }
         System.out.println("---------------------------------");
         System.out.println("Você está com " + pontos + " pontos.");
-        System.out.println("De 5 rodadas você ganhou "+ganhou+", perdeu "+perdeu+" e "+invalido+" foram inválidas.");
+        System.out.println("De 5 rodadas você ganhou "+ganhou+", perdeu "+perdeu);
     }
 }
